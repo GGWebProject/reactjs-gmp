@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './core/App/App';
 import reportWebVitals from './reportWebVitals';
+import Launcher from './core/Launcher/Launcher';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<Launcher>
+			<App />
+		</Launcher>
 	</React.StrictMode>,
 	document.getElementById('root'),
 );
