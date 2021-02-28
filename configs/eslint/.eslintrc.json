@@ -1,0 +1,112 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true,
+		"jest": true
+	},
+	"extends": [
+    "prettier",
+    "airbnb-typescript",
+    "plugin:react/recommended"
+	],
+  "parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2020,
+		"sourceType": "module",
+		"project": "./tsconfig.json",
+    "createDefaultProgram": true
+	},
+	"plugins": ["prettier", "react", "@typescript-eslint"],
+	"rules": {
+		"react/jsx-one-expression-per-line": "off",
+		"import/prefer-default-export": "off",
+		"quotes": "off",
+		"jsx-quotes": ["error", "prefer-single"],
+		"object-curly-spacing": ["error", "always"],
+		"no-else-return": "warn",
+		"prefer-const": "warn",
+		"no-use-before-define": "off",
+		"object-curly-newline": ["error", { "multiline": true }],
+		"max-len": [
+			"warn",
+			{
+				"code": 120,
+				"ignoreStrings": true,
+				"ignoreTemplateLiterals": true,
+				"ignoreComments": true
+			}
+		],
+		"padding-line-between-statements": [
+			"error",
+			{
+				"blankLine": "always",
+				"prev": "*",
+				"next": ["return", "switch", "if", "for", "while"]
+			},
+			{
+				"blankLine": "always",
+				"prev": ["if", "switch", "for", "while"],
+				"next": "*"
+			},
+			{
+				"blankLine": "always",
+				"prev": ["const", "let", "var"],
+				"next": "*"
+			},
+			{
+				"blankLine": "any",
+				"prev": ["const", "let", "var"],
+				"next": ["const", "let", "var"]
+			}
+		],
+		"max-classes-per-file": "off",
+		"lines-between-class-members": [
+			"warn",
+			"always",
+			{ "exceptAfterSingleLine": true }
+		],
+		"@typescript-eslint/lines-between-class-members": "off",
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/no-use-before-define": "off",
+		"@typescript-eslint/no-unused-vars": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/quotes": ["error"]
+	},
+	"overrides": [
+		{
+			// enable the rule specifically for TypeScript files
+			"files": ["*.ts", "*.tsx"],
+			"rules": {
+				"@typescript-eslint/lines-between-class-members": [
+					"warn",
+					"always",
+					{ "exceptAfterSingleLine": true }
+				],
+				"@typescript-eslint/quotes": ["error", "single"],
+				"@typescript-eslint/explicit-function-return-type": ["error"],
+				"@typescript-eslint/no-use-before-define": [
+					"error",
+					{
+						"ignoreTypeReferences": false
+					}
+				],
+				"@typescript-eslint/no-unused-vars": [
+					"warn",
+					{
+						"vars": "all",
+						"args": "none"
+					}
+				],
+				"@typescript-eslint/no-explicit-any": [
+					"error",
+					{
+						"ignoreRestArgs": true
+					}
+				]
+			}
+		}
+	]
+}
