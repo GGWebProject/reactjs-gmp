@@ -6,20 +6,18 @@
 	},
 	"extends": [
     "prettier",
-    "airbnb-typescript",
+    "airbnb",
+    "airbnb/hooks",
     "plugin:react/recommended"
 	],
-  "parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaFeatures": {
 			"jsx": true
 		},
 		"ecmaVersion": 2020,
-		"sourceType": "module",
-		"project": "./tsconfig.json",
-    "createDefaultProgram": true
+		"sourceType": "module"
 	},
-	"plugins": ["prettier", "react", "@typescript-eslint"],
+	"plugins": ["prettier", "react"],
 	"rules": {
 		"react/jsx-one-expression-per-line": "off",
 		"import/prefer-default-export": "off",
@@ -67,46 +65,6 @@
 			"warn",
 			"always",
 			{ "exceptAfterSingleLine": true }
-		],
-		"@typescript-eslint/lines-between-class-members": "off",
-		"@typescript-eslint/explicit-function-return-type": "off",
-		"@typescript-eslint/no-use-before-define": "off",
-		"@typescript-eslint/no-unused-vars": "off",
-		"@typescript-eslint/no-explicit-any": "off",
-		"@typescript-eslint/quotes": ["error"]
-	},
-	"overrides": [
-		{
-			// enable the rule specifically for TypeScript files
-			"files": ["*.ts", "*.tsx"],
-			"rules": {
-				"@typescript-eslint/lines-between-class-members": [
-					"warn",
-					"always",
-					{ "exceptAfterSingleLine": true }
-				],
-				"@typescript-eslint/quotes": ["error", "single"],
-				"@typescript-eslint/explicit-function-return-type": ["error"],
-				"@typescript-eslint/no-use-before-define": [
-					"error",
-					{
-						"ignoreTypeReferences": false
-					}
-				],
-				"@typescript-eslint/no-unused-vars": [
-					"warn",
-					{
-						"vars": "all",
-						"args": "none"
-					}
-				],
-				"@typescript-eslint/no-explicit-any": [
-					"error",
-					{
-						"ignoreRestArgs": true
-					}
-				]
-			}
-		}
-	]
+		]
+	}
 }

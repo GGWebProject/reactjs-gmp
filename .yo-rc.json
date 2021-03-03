@@ -16,7 +16,6 @@
         ],
         "webpackOptions": {
           "mode": "'development'",
-          "entry": "'./src/index.ts'",
           "plugins": [
             "new webpack.ProgressPlugin()",
             "new MiniCssExtractPlugin({ filename:'main.[contenthash].css' })",
@@ -25,14 +24,11 @@
           "module": {
             "rules": [
               {
-                "test": "/\\.(ts|tsx)$/",
-                "loader": "'ts-loader'",
+                "test": "/\\.(js|jsx)$/",
                 "include": [
                   "path.resolve(__dirname, 'src')"
                 ],
-                "exclude": [
-                  "/node_modules/"
-                ]
+                "loader": "'babel-loader'"
               },
               {
                 "test": "/.(sa|sc|c)ss$/",
@@ -54,13 +50,6 @@
                   }
                 ]
               }
-            ]
-          },
-          "resolve": {
-            "extensions": [
-              "'.tsx'",
-              "'.ts'",
-              "'.js'"
             ]
           },
           "devServer": {

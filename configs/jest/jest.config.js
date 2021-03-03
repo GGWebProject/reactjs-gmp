@@ -1,19 +1,19 @@
 module.exports = {
   rootDir: '../../',
   collectCoverageFrom: [
-    'src/**/*.{js,jsx,ts,tsx}',
-    '!src/**/*.d.ts',
+    '<rootDir>/src/**/*.{js,jsx}',
   ],
   testMatch: [
-    '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
-    '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}',
+    '<rootDir>/src/**/__tests__/**/*.{js,jsx}',
+    '<rootDir>/src/**/*.{spec,test}.{js,jsx}',
   ],
   testPathIgnorePatterns: [
-    '<rootDir>/build/',
+    '<rootDir>/dist/',
     '<rootDir>/node_modules/',
   ],
+  transform: { '^.+\\.jsx?$': "babel-jest" },
   setupFilesAfterEnv: ['<rootDir>/configs/jest/jest.setup.js'],
   moduleNameMapper: { '^.+\\.(css|sass|scss)$': 'identity-obj-proxy' },
   testEnvironment: 'jsdom',
-  preset: 'ts-jest',
+  cacheDirectory: '<rootDir>/configs/jest/_cache/',
 };

@@ -6,6 +6,8 @@
 out
 gen
 
+_cache
+
 # dependencies
 /node_modules
 /.pnp
