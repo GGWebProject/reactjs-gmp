@@ -38,6 +38,9 @@
 		"declaration-block-semicolon-newline-after": "always",
 		"block-opening-brace-newline-after": "always",
 		"block-closing-brace-newline-before": "always",
-		"declaration-colon-space-after": "always"
+		"declaration-colon-space-after": "always",
+    "no-extra-semicolons": true,
+    "at-rule-semicolon-space-before": "never",
+    "at-rule-semicolon-newline-after": "always"
 	}
 }

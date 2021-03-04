@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -38,6 +39,11 @@ module.exports = {
       cacheLocation: path.resolve(__dirname, 'configs/eslint/_cache/'),
       lintDirtyModulesOnly: true,
     }),
+    new StylelintPlugin({
+      configFile: path.resolve(__dirname, 'configs/stylelint/.stylelintrc.json'),
+      fix: true,
+      lintDirtyModulesOnly: true,
+    }),
   ],
 
   module: {
@@ -51,14 +57,17 @@ module.exports = {
         test: /.(sa|sc|c)ss$/,
 
         use: [
-          { loader: MiniCssExtractPlugin.loader },
           {
-            loader: "css-loader",
+            loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: '../' },
+          },
+          {
+            loader: 'css-loader',
 
             options: { sourceMap: true },
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
 
             options: { sourceMap: true },
           },
