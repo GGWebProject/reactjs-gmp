@@ -1,0 +1,22 @@
+.search {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  &__input {
+    --input-bg: #232323aa;
+
+    flex-grow: 1;
+    border: none;
+    border-radius: 5px;
+    padding: 0 15px;
+    font-size: 18px;
+    background-color: var(--input-bg);
+    color: var(--primary-text-color);
+  }
+
+  &__button {
+    margin-left: 10px;
+  }
+}

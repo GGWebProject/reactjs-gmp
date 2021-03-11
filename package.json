@@ -1,54 +1,80 @@
 {
-  "name": "reactjs-gmp",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-gmp",
+  "version": "1.0.0",
+  "description": "React project for GMP",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config './configs/jest/jest.config.js'",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "start": "cross-env NODE_ENV=development webpack serve --mode development",
+    "lint": "eslint --max-warnings=0 --ext=jsx --ext=js ./src --config ./configs/eslint/.eslintrc.json --ignore-path ./configs/eslint/.eslintignore --cache=true --cache-location ./configs/eslint/_cache/",
+    "lint:scss": "stylelint ./src/**/*.scss --cache --max-warnings=0 --syntax=scss --config=configs/stylelint/.stylelintrc.json --fix --cache-location=configs/stylelint/_cache/",
+    "prettierify": "prettier-eslint --write %INIT_CWD%/src/**/*.{js,jsx} --eslint-config-path './configs/eslint/.eslintrc.json' --log-level info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GGWebProject/reactjs-gmp.git"
+  },
+  "author": "Vitali Hantarenka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GGWebProject/reactjs-gmp/issues"
+  },
+  "homepage": "https://github.com/GGWebProject/reactjs-gmp#readme",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.1",
-    "node-sass": "^5.0.0",
+    "clsx": "^1.1.1",
+    "identity-obj-proxy": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
-    "web-vitals": "^1.1.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "lint": "eslint --fix",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
-    "eslint": "^7.19.0",
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.1.10",
+    "@webpack-cli/init": "^1.1.3",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.1.1",
+    "eslint": "^7.21.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.1.3",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "stylelint": "^13.9.0",
-    "stylelint-config-sass-guidelines": "^7.1.0",
+    "eslint-webpack-plugin": "^2.5.2",
+    "html-webpack-plugin": "^5.2.0",
+    "jest": "^26.6.3",
+    "mini-css-extract-plugin": "^1.3.9",
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "prettier-eslint-cli": "^5.0.0",
+    "react-test-renderer": "^17.0.1",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.11.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-sass-guidelines": "^8.0.0",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.19.0"
+    "stylelint-scss": "^3.19.0",
+    "stylelint-webpack-plugin": "^2.1.1",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

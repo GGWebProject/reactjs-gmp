@@ -1,0 +1,27 @@
+.sort-filter {
+  position: relative;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__label {
+    text-transform: uppercase;
+    color: var(--secondary-text-color);
+    margin-right: 20px;
+  }
+
+  &__select {
+    background-color: transparent;
+    border: none;
+    color: var(--primary-text-color);
+    text-transform: uppercase;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  &__select-item {
+    background-color: var(--main-content-bg);
+    padding: 10px;
+  }
+}

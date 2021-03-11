@@ -1,0 +1,12 @@
+.main {
+  background-color: var(--main-content-bg);
+  padding-top: 20px;
+
+  &__filter {
+    margin-bottom: 40px;
+  }
+
+  &__movies {
+    margin-bottom: 40px;
+  }
+}
