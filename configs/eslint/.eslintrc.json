@@ -23,11 +23,7 @@
   ],
   "rules": {
     "react/button-has-type": "off",
-    "react/jsx-props-no-spreading": ["error",
-      {
-        "custom": "ignore"
-      }
-    ],
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
     "import/prefer-default-export": "off",
     "quotes": "off",

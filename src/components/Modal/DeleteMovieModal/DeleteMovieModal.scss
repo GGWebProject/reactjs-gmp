@@ -1,0 +1,16 @@
+.delete-movie-modal {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  &__controls {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+  }
+
+  &__text {
+    color: var(--primary-text-color);
+    font-size: 18px;
+  }
+}

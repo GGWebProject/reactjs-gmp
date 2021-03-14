@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import Button from '../Button';
 import './Search.scss';
-import { BUTTONS_TYPES } from '../Button/ButtonBuilder/ButtonBuilder';
+import Button from '../Button/Button';
+import Input from '../Input/Input';
+import { searchButton } from '../../common/entities/button-options';
 
 const inputPlaceHolder = 'What do you want to watch?';
 const baseClassName = 'search';
@@ -13,8 +14,12 @@ const Search = ({ className }) => {
 
   return (
     <form className={classNames}>
-      <input type='search' placeholder={inputPlaceHolder} className={`${baseClassName}__input`} />
-      <Button type={BUTTONS_TYPES.search} className={`${baseClassName}__button`} />
+      <Input
+        type='search'
+        placeholder={inputPlaceHolder}
+        baseClassName={baseClassName}
+      />
+      <Button buttonOptions={searchButton} className={`${baseClassName}__button`}>Search</Button>
     </form>
   );
 };

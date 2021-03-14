@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { MovieEntity } from '../../../common/entities/MovieEntity';
-import './Movie.scss';
+import './MovieCard.scss';
 import Image from '../../Image/Image';
+import { Movie } from '../../../common/entities/movie';
+import MovieOptions from './MovieOptions/MovieOptions';
 
 const baseClassName = 'movie';
 
-const Movie = ({ className, movieData }) => {
-  const [isFailedImageLoad, setImageLoadStatus] = useState(false);
+const MovieCard = ({ className, movieData }) => {
+  const [isFailedImageLoad, setImageError] = useState(false);
+  const [isShowOption, setShowOptionState] = useState(false);
 
   const classNames = clsx(baseClassName, {
     [className]: className,
@@ -18,11 +20,19 @@ const Movie = ({ className, movieData }) => {
   const genresString = genres.join(', ');
 
   const handleImageError = () => {
-    setImageLoadStatus(true);
+    setImageError(true);
   };
 
   return (
-    <div className={classNames}>
+    <div
+      className={classNames}
+      onMouseEnter={() => setShowOptionState(true)}
+      onMouseLeave={() => setShowOptionState(false)}
+    >
+      {
+        isShowOption
+          && <MovieOptions baseClassName={baseClassName} />
+      }
       <div className={`${baseClassName}__image-wrapper`}>
         <Image
           className={`${baseClassName}__image`}
@@ -40,14 +50,14 @@ const Movie = ({ className, movieData }) => {
   );
 };
 
-Movie.propTypes = {
+MovieCard.propTypes = {
   className: PropTypes.string,
-  movieData: PropTypes.instanceOf(MovieEntity),
+  movieData: PropTypes.instanceOf(Movie),
 };
 
-Movie.defaultProps = {
+MovieCard.defaultProps = {
   className: '',
-  movieData: new MovieEntity({}),
+  movieData: new Movie({}),
 };
 
-export default Movie;
+export default MovieCard;

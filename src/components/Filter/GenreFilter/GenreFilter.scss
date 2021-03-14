@@ -4,7 +4,7 @@
   list-style: none;
   display: flex;
 
-  &__label {
+  &__input-label {
     position: relative;
     color: var(--primary-text-color);
     cursor: pointer;
@@ -24,10 +24,11 @@
   }
 
   &__input {
-    display: none;
+    appearance: none;
+    position: absolute;
   }
 
-  &__input:checked + &__label:after {
+  &__input:checked + &__input-label:after {
     opacity: 1;
     transform: translateY(15px);
   }

@@ -3,7 +3,7 @@ import './Main.scss';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import Filter from '../../components/Filter/Filter';
-import Movies from '../../components/Movies/Movies';
+import MoviesList from '../../components/MoviesList/MoviesList';
 import { MOCK_AVAILABLE_GENRES_FILTERS, MOCK_AVAILABLE_SORT_FILTERS } from '../../__MOCK__/filters';
 import { MOCK_MOVIES } from '../../__MOCK__/movies';
 
@@ -20,7 +20,7 @@ const Main = ({ className }) => {
           genres={MOCK_AVAILABLE_GENRES_FILTERS}
           sortOptions={MOCK_AVAILABLE_SORT_FILTERS}
         />
-        <Movies
+        <MoviesList
           className={`${baseClassName}__movies`}
           movies={MOCK_MOVIES}
         />

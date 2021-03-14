@@ -5,13 +5,13 @@
   align-items: center;
   justify-content: flex-start;
 
-  &__label {
+  &__select-label {
     text-transform: uppercase;
     color: var(--secondary-text-color);
     margin-right: 20px;
   }
 
-  &__select {
+  &__list {
     background-color: transparent;
     border: none;
     color: var(--primary-text-color);
@@ -20,7 +20,7 @@
     cursor: pointer;
   }
 
-  &__select-item {
+  &__list-item {
     background-color: var(--main-content-bg);
     padding: 10px;
   }

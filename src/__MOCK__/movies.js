@@ -1,52 +1,52 @@
-import { MovieEntity } from '../common/entities/MovieEntity';
+import { Movie } from '../common/entities/movie';
 
 export const MOCK_MOVIES = [
-  new MovieEntity({
+  new Movie({
     id: 1,
     title: 'First Film',
     releaseDate: '2016',
     movieUrl: 'https:some-url.ru',
-    imageUrl: null,
+    imageUrl: '',
     genres: ['Comedy'],
     description: 'Good movie 1',
     runtime: '1h 20min',
   }),
-  new MovieEntity({
+  new Movie({
     id: 2,
     title: 'Second Film',
     releaseDate: '2015',
     movieUrl: 'https:some-url.ru',
-    imageUrl: null,
+    imageUrl: '',
     genres: ['Documentary'],
     description: 'Good movie 2',
     runtime: '1h 50min',
   }),
-  new MovieEntity({
+  new Movie({
     id: 3,
     title: 'Third Film',
     releaseDate: '2010',
     movieUrl: 'https:some-url.ru',
-    imageUrl: null,
+    imageUrl: '',
     genres: ['Comedy'],
     description: 'Good movie 3',
     runtime: '1h 10min',
   }),
-  new MovieEntity({
+  new Movie({
     id: 4,
     title: 'Fourth Film',
     releaseDate: '2012',
     movieUrl: 'https:some-url.ru',
-    imageUrl: null,
+    imageUrl: '',
     genres: ['Horror'],
     description: 'Good movie 4',
     runtime: '1h 30min',
   }),
-  new MovieEntity({
+  new Movie({
     id: 5,
     title: 'Fifth Film',
     releaseDate: '2004',
     movieUrl: 'https:some-url.ru',
-    imageUrl: null,
+    imageUrl: '',
     genres: ['Crime'],
     description: 'Good movie 5',
     runtime: '2h 20min',

@@ -2,28 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SortFilter.scss';
 import clsx from 'clsx';
+import Select from '../../Select/Select';
+import { SelectOption } from '../../../common/entities/select-entities';
 
 const baseClassName = 'sort-filter';
 
 const SortFilter = ({ sortOptions, className }) => {
   const classNames = clsx(baseClassName, { [className]: className });
+  const selectOptions = sortOptions.map((option) => (
+    new SelectOption({
+      value: option,
+      label: option,
+    })
+  ));
 
   return (
     <div className={classNames}>
-      <span className={`${baseClassName}__label`}>Sort by</span>
-      <select name='sort-by' className={`${baseClassName}__select`} defaultValue={sortOptions[0]}>
-        {
-          sortOptions.map((option) => (
-            <option
-              className={`${baseClassName}__select-item`}
-              key={option}
-              value={option}
-            >
-              {option}
-            </option>
-          ))
-        }
-      </select>
+      <Select
+        labelText='Sort by'
+        options={selectOptions}
+        name='sort-by'
+        baseClassName={baseClassName}
+      />
     </div>
   );
 };

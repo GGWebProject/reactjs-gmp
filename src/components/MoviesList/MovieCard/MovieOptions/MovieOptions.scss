@@ -1,0 +1,67 @@
+.movie {
+  position: relative;
+
+  &__open-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--main-content-bg);
+    z-index: 1;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+    }
+
+    .dot + .dot {
+      margin-top: 3px;
+    }
+  }
+
+  &__options-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--main-content-bg);
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    width: 150px;
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+
+  &__close-btn {
+    margin-left: auto;
+    margin-right: 5px;
+  }
+
+  &__remove-movie-btn,
+  &__edit-movie-btn {
+    font-size: 16px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    color: var(--primary-text-color);
+    text-transform: capitalize;
+    padding: 0 30px;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--accent-color);
+    }
+  }
+}

@@ -1,4 +1,4 @@
-export class MovieEntity {
+export class Movie {
   constructor({
     id,
     title,
@@ -13,7 +13,7 @@ export class MovieEntity {
     this.title = title;
     this.releaseDate = releaseDate;
     this.movieUrl = movieUrl;
-    this.imageUtl = imageUrl;
+    this.imageUrl = imageUrl;
     this.genres = genres;
     this.description = description;
     this.runtime = runtime;

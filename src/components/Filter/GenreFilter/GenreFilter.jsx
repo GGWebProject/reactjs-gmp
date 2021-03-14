@@ -2,35 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import './GenreFilter.scss';
+import Input from '../../Input/Input';
 
 const baseClassName = 'genres-filter';
 
 const GenreFilter = ({ genres, className }) => {
   const classNames = clsx(baseClassName, { [className]: className });
+  const formattedGenres = ['All', ...genres];
 
   return (
     <ul className={classNames}>
       {
-        genres.map((filter, index) => {
+        formattedGenres.map((filter, index) => {
           const isChecked = index === 0;
 
           return (
             <li className={`${baseClassName}__item`} key={filter}>
-              <input
+              <Input
+                label={filter.toUpperCase()}
                 defaultChecked={isChecked}
                 onChange={() => { console.log(filter); }}
-                className={`${baseClassName}__input`}
+                baseClassName={baseClassName}
                 type='radio'
                 id={`${baseClassName}_${filter}`}
                 value={filter}
-                name={baseClassName}
+                name='genre'
               />
-              <label
-                className={`${baseClassName}__label`}
-                htmlFor={`${baseClassName}_${filter}`}
-              >
-                {filter.toUpperCase()}
-              </label>
             </li>
           );
         })

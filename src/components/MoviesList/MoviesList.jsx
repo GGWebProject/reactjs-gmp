@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import Movie from './Movie/Movie';
-import { MovieEntity } from '../../common/entities/MovieEntity';
-import './Movies.scss';
+import MovieCard from './MovieCard/MovieCard';
+import { Movie } from '../../common/entities/movie';
+import './MoviesList.scss';
 
 const baseClassName = 'movies';
 
-const Movies = ({ className, movies }) => {
+const MoviesList = ({ className, movies }) => {
   const classNames = clsx(baseClassName, { [className]: className });
 
   return (
@@ -19,7 +19,7 @@ const Movies = ({ className, movies }) => {
         {
           movies.map((movieData) => (
             <li key={movieData.id} className={`${baseClassName}__list-item`}>
-              <Movie className={`${baseClassName}__item`} movieData={movieData} />
+              <MovieCard className={`${baseClassName}__item`} movieData={movieData} />
             </li>
           ))
         }
@@ -28,14 +28,14 @@ const Movies = ({ className, movies }) => {
   );
 };
 
-Movies.propTypes = {
+MoviesList.propTypes = {
   className: PropTypes.string,
-  movies: PropTypes.arrayOf(PropTypes.instanceOf(MovieEntity)),
+  movies: PropTypes.arrayOf(PropTypes.instanceOf(Movie)),
 };
 
-Movies.defaultProps = {
+MoviesList.defaultProps = {
   className: '',
   movies: [],
 };
 
-export default Movies;
+export default MoviesList;
