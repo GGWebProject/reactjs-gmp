@@ -10,6 +10,7 @@ export const MOCK_MOVIES = [
     genres: ['Comedy'],
     description: 'Good movie 1',
     runtime: '1h 20min',
+    rating: 4.3,
   }),
   new Movie({
     id: 2,
@@ -20,6 +21,7 @@ export const MOCK_MOVIES = [
     genres: ['Documentary'],
     description: 'Good movie 2',
     runtime: '1h 50min',
+    rating: 4.1,
   }),
   new Movie({
     id: 3,
@@ -30,6 +32,7 @@ export const MOCK_MOVIES = [
     genres: ['Comedy'],
     description: 'Good movie 3',
     runtime: '1h 10min',
+    rating: 4.6,
   }),
   new Movie({
     id: 4,
@@ -40,6 +43,7 @@ export const MOCK_MOVIES = [
     genres: ['Horror'],
     description: 'Good movie 4',
     runtime: '1h 30min',
+    rating: 4,
   }),
   new Movie({
     id: 5,
@@ -50,5 +54,6 @@ export const MOCK_MOVIES = [
     genres: ['Crime'],
     description: 'Good movie 5',
     runtime: '2h 20min',
+    rating: 5,
   }),
 ];

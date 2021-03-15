@@ -8,6 +8,7 @@ export class Movie {
     genres,
     description,
     runtime,
+    rating,
   }) {
     this.id = id;
     this.title = title;
@@ -17,5 +18,6 @@ export class Movie {
     this.genres = genres;
     this.description = description;
     this.runtime = runtime;
+    this.rating = rating;
   }
 }

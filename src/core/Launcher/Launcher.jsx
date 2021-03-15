@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
-import { ModalContext } from '../Contexts';
+import { ModalContext, MovieDetailsContext } from '../Contexts';
 
 const Launcher = ({ children }) => {
   const [modalState, setModalState] = useState({ isModalOpen: false, type: null });
@@ -11,10 +11,18 @@ const Launcher = ({ children }) => {
     setModalState,
   };
 
+  const [movieDetails, setMovieDetails] = useState({ movie: null });
+  const movieDetailsValue = {
+    movie: movieDetails.movie,
+    setMovieDetails,
+  };
+
   return (
     <ErrorBoundary>
       <ModalContext.Provider value={modalValue}>
-        {children}
+        <MovieDetailsContext.Provider value={movieDetailsValue}>
+          {children}
+        </MovieDetailsContext.Provider>
       </ModalContext.Provider>
     </ErrorBoundary>
   );

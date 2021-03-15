@@ -7,6 +7,10 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
+  &--movie-details {
+    --header-content-bg: #000000df;
+  }
+
   &:before {
     position: absolute;
     content: '';
